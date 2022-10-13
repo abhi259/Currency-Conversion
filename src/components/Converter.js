@@ -61,8 +61,11 @@ export default function Converter() {
         currencyValue[toSelectedCurrency]
     )
     setResult(
-      (parseInt(inputValue) / currencyValue[fromSelectedCurrency]) *
-        currencyValue[toSelectedCurrency]
+      Math.round(
+        (parseInt(inputValue) / currencyValue[fromSelectedCurrency]) *
+          currencyValue[toSelectedCurrency] *
+          1000
+      ) / 1000
     )
   }
 
